@@ -1,3 +1,6 @@
+/**
+All possible combinations of n-length String (e.g. 4) when having many characters (e.g. alphabet)
+**/
 public class Scalable{
     public static void main(String[] args) {
         String alpha = "abcd";
