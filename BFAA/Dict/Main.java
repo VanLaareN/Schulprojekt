@@ -15,7 +15,8 @@ public class Main{
         double gesamtZeit = (endZeit - StartZeit)/1000000000d;
 
         if(ergebnis.isEmpty() == true){
-            System.out.println("Alle Einträge in der Datei: "+ PFAD+ " wurden gehasht und mit dem ursprünglichen Hash verglichen, es gab keinen positiven Match...");
+            System.out.println("Alle Einträge in der Datei: "+ PFAD
+            + " wurden gehasht und mit dem ursprünglichen Hash verglichen, es gab keinen positiven Match...");
         }
         else{
             System.out.println("\nFertig!\nDas Passwort lautet: "+ergebnis+"\n(SHA-256) Hash: "+originalHash);
@@ -24,6 +25,7 @@ public class Main{
         String zaehler = String.format("%,d", handler.zaehler);
         String kombprosek = String.format("%,d", Math.round(handler.zaehler/gesamtZeit));
         
-        System.out.println("\nSTATISTIK:\n--------\nAnzahl der veruschten Kombinationen: "+ handler.zaehler +"\nLaufzeit: "+gesamtZeit+"s");
+        System.out.println("\nSTATISTIK:\n--------\nAnzahl der veruschten Kombinationen: "
+        + handler.zaehler +"\nLaufzeit: "+gesamtZeit+"s");
     }
 }
