@@ -6,6 +6,7 @@ public class Main{
     //Konstanten
     private static Funktionen handler = new Funktionen();
     private static Scanner tastaturInput = new Scanner(System.in);
+    private static int SLEEP_MAX = 25;
     
     public static void main(String[] args) {
         ArrayList<Thread> threadListe = new ArrayList<Thread>();
@@ -26,6 +27,15 @@ public class Main{
         }
         System.out.println("");
         while(!threadListe.isEmpty()){
+            for (int i = 0; i < threadListe.size(); i++){
+             try{
+               threadListe.get(i).sleep(SLEEP_MAX);  
+             }
+              catch(Exception e){
+                  e.printStackTrace();
+              }
+                
+            }
             for (int x = 0; x < threadListe.size(); x++){
                 if (threadListe.get(x).getState() == Thread.State.TERMINATED){
                     System.out.println("Thread fertig:\t\t\t" + threadListe.get(x).getName());
