@@ -18,7 +18,7 @@ public class Funktionen{
 
             StringBuilder builder = new StringBuilder();
             for (byte b : hash) {
-                builder.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
+                builder.append(String.format("%02x", b));
             }
             String txtHash = builder.toString();
             return txtHash;
